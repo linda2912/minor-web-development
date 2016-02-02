@@ -1,7 +1,0 @@
-Don't use global variables / objects
-Declare variables at top of scope
-Use short clear meaningful names
-Work in strict mode
-camelCase your code
-Place external scripts at the bottom of the page
-Indent your code

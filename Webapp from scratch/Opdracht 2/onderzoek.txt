@@ -1,0 +1,37 @@
+Voor- en nadelen JavaScript libraries/frameworks
+
+In dit onderzoek wordt er gekeken naar de voor- en nadelen van libraries/frameworks voor Javascript. Dit betekent dat het niet om specifieke libraries of frameworks gaat. Er zijn namelijk natuurlijk uitzonderingen op de algemene informatie.
+
+De eerste oppopte in Google was jsscripters.com. Deze site heeft het over de de librarie jQuery en de pro's en con's daarvan. De reden dat ik deze site toch gebruik is, omdat veel van de punten op globaal vak werken en niet alleen voor jQuery.
+
+De voordelen:
+	Het is makkelijk te gebruiken. De libraries/frameworks gebruiken de zelfde taal als de gebruiker. Het verschil is dat zij het zware lift werk doen. Zij maken de functies waardoor de gebruiker alleen de functie hoeft aan te roepen.
+	Het heeft (vaak) goede documentatie. De libraries/frameworks hebben goede documentatie over wat de functies doen. Deze documentatie is namelijk geschreven voor een gebruiker die functie niet wil of kan schrijven. Dit is veel vriendelijker dan bijvoorbeeld de documentatie van Javascript zelf.
+	De hoeveelheid aan functies. De libraries/frameworks zijn groot en hebben daardoor veel functualiteiten voor de gebruiker.
+	De community. De community van libraries/frameworks zijn behulpzaam en in grote getallen. Bijna elke librarie/framework heeft wel een forum waar de gebruiker zijn/haar vragen kan stellen.
+
+De nadelen:
+	De hoeveelheid aan functies. De hoeveelheid kan ook een groot nadeel zijn. Dit zorgt ervoor dat er mogelijk veel "overhead" ontstaat. Dit is als een product groot is gemaakt voor veel gebruikers, maar eigenlijk gebruikt een gebruiker maar een klein deel hiervan.
+	De functies doen het net niet goed. De functies zijn geschreven voor veel gebruikers. Hierdoor kan het zijn dat de gebruiker eigenlijk net een andere functie wil die er niet in zit. Dus dat moet die gene of toch zelf de functie schrijven, een andere librarie/framework zoeken of het vragen op fora.
+	De site moet meer laden. Een librarie/framework is groot en dat kost extra internet om te laden. Niet alleen moet de site meer code laden, ook moet het een extra bestand laden en dat betekent dat de client ook een extra request moet doen naar de server. Dit is niet goed voor de client en voor de server, en moet zoveel mogelijk tegen worden gehouden.
+
+http://www.jscripters.com/jquery-disadvantages-and-advantages/
+
+Stephem Chapman, volgens de site, een Javascript Expert heeft een artikel geschreven over de pro's en con's van het gebruiken van libraries. Door dit artikel kwamen er nieuwe pro's en con's  aan het licht. 
+
+Een grote pro die de con van "De site moet meer laden" ontacht is dat de gebruiker Google repositories kan gebruiken om libraries/frameworks in te laden. Dit betekent dat als een andere site het zelfde doet de librarie/framework nog steeds in de cache kan zitten. Uiteindelijk zorgt dat voor minder requests en dat is een zeer positief ding.
+
+Een con van libraries/frameworks gebruiken is dat de gebruiker iets nieuws moet leren en niet beter wordt in Javascript. Als de gebruiker zelf zijn code schrijft dan leert die efficientere en betere code te schrijven. Dit gebeurt niet als de gebruiker libraries/frameworks gebruikt. In tegendeel, de gebruiker moet zelf een nieuwe taal leren, namelijk de taal van de librarie/framework. Elke librarie/framework schrijft de functie namen toch net iets anders en gebruikt net een andere notatie.
+
+http://javascript.about.com/od/hintsandtips/a/liborself.htm
+
+Frameworks geven een manier van moduleren. Hiermee wordt bedoelt dat de gebruiker stukken code opnieuw kan gebruiken. Dit is echt de kracht van frameworks. Ze geven onze de mogelijk om te:
+	Templaten, dus code hergebruiken
+	Data-binden, het real-time koppelen van het template en client-side data
+	Routing, het laten zien van andere data zonder de hele pagina opnieuw te laden
+	 
+Er zijn nog meer mogelijkheden van frameworks, maar dit zijn wel de drie hoofdonderdelen.
+
+http://stackoverflow.com/questions/25152506/benefits-and-drawbacks-of-using-client-side-frameworks
+
+
