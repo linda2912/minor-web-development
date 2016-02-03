@@ -1,0 +1,267 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+
+  CUSTOM FONTS
+
+*/
+
+@font-face {
+  font-family: Yolo;
+  src: url("../fonts/master_of_break.otf");
+  unicode-range: U+26;
+}
+
+/*
+
+  GLOBAL
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+}
+
+/*
+  
+  HEADER
+
+*/
+
+body > header {
+  width: 100%;
+  background: #01579B;
+  padding: 1em 0;
+  color: white; 
+  text-align: center;
+}
+
+body > header h1 span {
+  font-family: Yolo, serif;
+  width: 100%;
+  display: block;
+}
+
+body > header figure {
+  margin: 2em 0 1em 0;
+}
+
+body > header figure img {
+  border-radius: 50%;
+}
+
+body > header nav {
+  margin-top: 2em;
+}
+
+body > header nav ul a{
+  border-bottom: 1px solid white;
+  display: block;
+  padding: 2em 0;
+  cursor: pointer;
+}
+
+body > header nav ul li:first-of-type a {
+  border-top: 1px solid white;
+}
+
+body > header nav ul a {
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+body > header nav ul a svg {
+  width: 1em;
+  height: 1em;
+  fill: white;
+}
+
+body > main {
+  width: 80%;
+  background: #ECEFF1;
+  padding: 1em;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main article {
+  margin-bottom: 1em;
+  max-width: 43em;
+  background: white;
+  padding: 1em;
+  border-top: 2em solid #01579B;
+}
+
+main article header {
+  margin-bottom: 1em;
+}
+
+main article header h1 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+main article header h1 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+main article header h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+main article figure {
+  width: 45%;
+  float: left;
+}
+
+main article figure:first-of-type {
+  margin-right:10%;
+}
+
+main article figure img {
+  width: 100%;
+}
+
+main article figure svg {
+  width: 1em;
+  height: 1em;
+}
+
+main article figure figcaption {
+  display: inline;
+}
+
+body > footer {
+  width: 100%;
+  background: #01579B;
+  padding: 1em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-content: stretch;
+}
+
+body > footer nav {
+  width: 33%;
+}
+
+body > footer address {
+  text-align: center;
+  width: 33%;
+  color: white;
+}
+
+body > footer > ul {
+  width: 33%;
+}
+
+body > footer ul li {
+  text-align: center;
+}
+
+body > footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 852px) {
+  main article {
+    border-right: 2em solid #01579B;
+    border-top: 0;
+  }
+}
+
+@media (min-width: 656px) {
+  body > header {
+    width: 20em;
+  }
+}
