@@ -1,0 +1,168 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #E0E0E0;
+  color: white;
+  font-family: roboto;
+}
+
+body > header {
+  margin: 1em;
+  padding: 1em;
+  background: #37474F;
+}
+
+body > header h1 {
+  font-size: 4em;
+  font-weight: 700;
+}
+
+body > main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1em;
+}
+
+article {
+  padding: 1em;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+article.cssToTheRescue {
+  background: #039BE5;
+}
+
+article.webappFromScratch {
+  background: #43A047;
+}
+
+article.weeklyNerd {
+  background: #D32F2F;
+}
+
+article > header {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  border-bottom: 3px solid white;
+}
+
+article > header h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+article p {
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+article section header {
+  width: 50%;
+}
+
+article section header h3 {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 0.66em 0;
+  margin: 0.66em 0;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+article section ul li {
+  margin: 0.5em 0;
+}
+
+article section ul li a {
+  color: white;
+  font-weight: 300;
+}
+
+article section ul li a:hover {
+  color: rgba(255, 255, 255, 0.7)
+}
+
+@media only screen and (min-width: 60em) {
+  article {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 80em) {
+  article {
+    width: 30%;
+  }
+}
