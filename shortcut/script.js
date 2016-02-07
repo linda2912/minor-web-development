@@ -12,14 +12,14 @@
         "</div>" +
         "<h2>CSS to the rescue</h2>" +
         "<ul>" +
-          "<li><a href='" + baseURL + "/cssToTheRescue/opdracht1/index.html'>Flexbox Baby</a></li>" +
+          "<li><a href='" + baseURL + "/cssToTheRescue/exercise1/index.html'>Flexbox Baby</a></li>" +
         "</ul>" +
         "<h2>Webapp from Scratch</h2>" +
         "<ul>" +
-          "<li><a href='" + baseURL + "/webappFromScratch/opdracht2/index.html'>Research the pro's and con's of libaries</a></li>" +
-          "<li><a href='" + baseURL + "/webappFromScratch/opdracht3/index.html'>Research the pro's and con's of webapps</a></li>" +
-          "<li><a href='" + baseURL + "/webappFromScratch/opdracht4/index.html'>Refactor bad code to slightly better code</a></li>" +
-          "<li><a href='" + baseURL + "/webappFromScratch/opdracht5/index.html'>Start the webapp, begin with routing</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise2/index.html'>Research the pro's and con's of libaries</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise3/index.html'>Research the pro's and con's of webapps</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise4/index.html'>Refactor bad code to slightly better code</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise5/index.html'>Start the webapp, begin with routing</a></li>" +
         "</ul>" +
         "<h2>Weekly Nerds</h2>" +
         "<ul>" +
