@@ -83,6 +83,10 @@ article {
   -webkit-column-break-inside: avoid;
 }
 
+article.introduction {
+  background: #EF6C00;
+}
+
 article.cssToTheRescue {
   background: #039BE5;
 }
@@ -109,6 +113,10 @@ article > header h2 {
 article p {
   line-height: 1.6;
   font-weight: 300;
+}
+
+article p bold {
+  font-weight: 700;
 }
 
 article section header {
