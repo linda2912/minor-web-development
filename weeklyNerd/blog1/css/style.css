@@ -123,10 +123,38 @@ body main > section p {
   line-height: 1.6;
 }
 
+body main > section p + p {
+  margin-top: 1em;
+}
+
+body main > section a {
+  color: #1E88E5;
+  text-decoration: none;
+}
+
+body main > section a:hover {
+  color: rgba(0,0,0,0.25);
+}
+
 body main > section blockquote {
   border-left : 0.5em solid #1E88E5;
   padding-left: 1.5em;
   margin: 1em 0;
   font-size: 1.25em;
   line-height: 1.6;
+}
+
+body main > section figure{
+  overflow: hidden;
+}
+
+body main > section figure img {
+  width: 100%;
+}
+
+body main > section figure figcaption {
+  float: right;
+  font-size: 0.75em;
+  font-weight: 300;
+  font-style: italic;
 }

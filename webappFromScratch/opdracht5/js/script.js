@@ -3,7 +3,7 @@
 
   var contentContainer;
 
-  var app = {
+  var mainController = {
     init: function() {
       this.populateGlobalScopeVars();
       routes.init();
@@ -47,11 +47,12 @@
       if(templates[templateName]) return true;
       else return false;
     },
+    //force an route change
     setHash: function(hash) {
       window.location.hash = '#' + hash;
       sections.changeRoute({oldHash: undefined, newHash: hash});
     }
   };
 
-  app.init();
+  mainController.init();
 }())
