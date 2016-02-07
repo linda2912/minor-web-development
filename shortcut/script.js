@@ -2,7 +2,7 @@
   var body = document.querySelector('body');
   var pathArray = location.href.split( '/' );
   var baseURL = pathArray[0] + '//' + pathArray[2];
-  console.log(baseURL);
+  console.log(location.href);
   var isMenu = false;
   var keysPressed = {};
   var templateString =
