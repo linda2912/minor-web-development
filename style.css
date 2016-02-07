@@ -119,6 +119,10 @@ article p bold {
   font-weight: 700;
 }
 
+article p + p {
+  margin-top: 1em;
+}
+
 article section header {
   width: 50%;
 }
