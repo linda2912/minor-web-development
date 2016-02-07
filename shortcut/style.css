@@ -17,17 +17,30 @@
   font-weight: 300;
 }
 
-.shortcutMenu .content .close {
-  text-align: right;
+.shortcutMenu .content a {
+  color: white;
+}
+
+.shortcutMenu .content a:hover {
+  color: rgba(255, 255, 255, 0.7)
+}
+
+
+.shortcutMenu .content .menu {
   font-size: 1em;
+  overflow: hidden;
   padding-bottom: 1em;
 }
 
-.shortcutMenu .content .close p {
-  display: inline;
+.shortcutMenu .content .menu a {
+  float: left;
 }
 
-.shortcutMenu .content .close p:hover {
+.shortcutMenu .content .menu p {
+  float: right;
+}
+
+.shortcutMenu .content .menu p:hover {
   cursor: pointer;  
 }
 

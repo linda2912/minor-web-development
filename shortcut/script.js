@@ -6,7 +6,8 @@
   var templateString =
     "<div class='shortcutMenu'>" +
       "<div class='content'>" +
-        "<div class='close'>" +
+        "<div class='menu'>" +
+          "<a href=" + baseURL + ">Back to the hub</a>" +
           "<p>X</p>" +
         "</div>" +
         "<h2>CSS to the rescue</h2>" +
@@ -42,11 +43,11 @@
   function createMenu() {
     isMenu = true;
     body.innerHTML += templateString;
-    document.querySelector('.close').addEventListener('click', deleteMenu);
+    document.querySelector('.menu p').addEventListener('click', deleteMenu);
   }
 
   function deleteMenu() {
-    document.querySelector('.close').removeEventListener('click', deleteMenu);
+    document.querySelector('.menu p').removeEventListener('click', deleteMenu);
     document.querySelector('.shortcutMenu').remove();
     isMenu = false;
   }

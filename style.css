@@ -134,7 +134,7 @@ article section ul li a {
 }
 
 article section ul li a:hover {
-  color: rgba(255, 255, 255, 0.7)
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media only screen and (min-width: 51.25em) {
