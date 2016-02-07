@@ -5,6 +5,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0,0,0, 0.75);
+  color: white;
 }
 
 .shortcutMenu .content {
@@ -19,6 +20,7 @@
 
 .shortcutMenu .content a {
   color: white;
+  text-decoration: none;
 }
 
 .shortcutMenu .content a:hover {
