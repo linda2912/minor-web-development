@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>The pro's and con's of using Web apps</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='favicon.ico' rel='shortcut icon'>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='../../shortcut/style.css'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+  </head>
+  <body>
+    <article>
+      <footer>
+        <figure>
+          <img src='img/face.jpg' />
+        </figure>
+          <div>
+            <p>
+              Written by <bold>Casper Boutens</bold> on <span> 02 Febuary 2016 </span>
+            </p>
+          </div>
+      </footer>
+      <header>
+        <h1>The pro's and con's of using Web apps</h1>
+      </header>
+      <p>
+        For this research, the focus will be on the global use of single page web applications (SPA). This means that there will be exceptions on this research. A SPA is a website that uses Javascript to change (parts) the content of a page. This way the client doesn't have to ask a lot to the server, and that is better for performance.
+      </p>
+      <p>
+        The first <a href='http://stackoverflow.com/questions/21862054/single-page-application-advantages-and-disadvantages'>site</a> points out some of the pro's and con's when using SPA's. After that I want to talk a bit more about SEO because that is the real problem with SPA's in my opinion.
+      </p>
+      <p>
+        The pro's of using Web apps:
+      </p>
+      <ul>
+        <li>
+          More flexibility. SPA give the option to refresh or change part of the content on a page. The end user's client doesn't have to ask the server for much this way. This is one of the main features of a SPA.
+        </li>
+        <li>
+          The speed. SPA's can load a lot faster because they don't have to ask things from the server. It's mostly client-side and that is almost always faster.
+        </li>
+      </ul>
+      <p>
+        The con's of using Web apps:
+      </p>
+      <ul>
+        <li>
+          Javascript must be enabled. If Javascript isn't enabled the site will not run. Nothing will happen, but in this day and age, the change that Javascript is disabled is really small.
+        </li>
+        <li>
+          One point of entree. SPA routes work with pound signs(#) to tell Javascript on which page they are. This means that there is only one point to enter the site by default. There are ways to avoid this, for example, the site can save the end user's position in the site in the database. When the end user returns he / she can be put back where he / she left.
+        </li>
+      </ul>
+      <p>
+        <a href='https://www.getambassador.com/blog/single-page-webapp-seo'>SEO</a> is a big problem in SPA's. It is so big, that I wanted to talk about it separately. SPA have no HTML baked in place when someone looks at the server. The HTML is injected by Javascript. Google doesn't like this. This is because Google doesn't run Javascript when scanning a site. So if someone makes a SPA, the site will not be very findable through Google. But, there is a solution. If the user sets $locationProvider.html5Mode(true); This will remove the pound sign from the URL and let Google scan the site. The next problem is that Google sees only empty templates. A way to fix this is to point Google in the direction of caches and baked pages of the site.
+      </p>
+    </article>
+    <script src='../../shortcut/script.js'></script>
+  </body>
+</html>
