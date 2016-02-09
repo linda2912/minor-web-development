@@ -25,6 +25,7 @@
         "<h2>Weekly Nerds</h2>" +
         "<ul>" +
           "<li><a href='" + baseURL + "/weeklyNerd/blog1/index.html'>Arjan Westerdiep (Drububu) - From pixelart to other cool things</a></li>" +
+          "<li><a href='" + baseURL + "/weeklyNerd/blog2/index.html'>Marrije Schaake - The power of real-life Photoshop</a></li>" +
         "</ul>" +
       "</div>" +
     "</div>"
