@@ -1,0 +1,387 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+
+  CUSTOM FONTS
+
+*/
+
+@font-face {
+  font-family: Yolo;
+  src: url("../fonts/master_of_break.otf");
+  unicode-range: U+26;
+}
+
+/*
+
+  GLOBAL
+
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  font-family: 'Roboto', sans-serif;
+  color: #212121;
+}
+
+/*
+  
+  HEADER
+
+*/
+
+body > header {
+  width: 100%;
+  background: #01579B;
+  padding: 1em 0;
+  color: white; 
+  text-align: center;
+}
+
+body > header h1 span {
+  font-family: Yolo, serif;
+  width: 100%;
+  display: block;
+}
+
+body > header figure {
+  margin: 2em 0 1em 0;
+}
+
+body > header figure img {
+  border-radius: 50%;
+}
+
+body > header nav {
+  margin-top: 2em;
+}
+
+body > header nav ul a{
+  border-bottom: 1px solid white;
+  display: block;
+  padding: 2em 0;
+  cursor: pointer;
+}
+
+body > header nav ul li:first-of-type a {
+  border-top: 1px solid white;
+}
+
+body > header nav ul a {
+  font-size: 1em;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+body > header nav ul a svg {
+  width: 1em;
+  height: 1em;
+  fill: white;
+}
+
+body > main {
+  width: 80%;
+  background: #ECEFF1;
+  padding: 1em;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1; 
+  display: -webkit-box; 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+}
+
+main article:not(#profile-picture) {
+  margin-bottom: 1em;
+  max-width: 43em;
+  background: white;
+  padding: 1em;
+  border-top: 2em solid #01579B;
+}
+
+main article:not(#profile-picture) header {
+  margin-bottom: 1em;
+}
+
+main article:not(#profile-picture) header h1 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+main article:not(#profile-picture) header h1 {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+main article:not(#profile-picture) header h2 {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+main article:not(#profile-picture) figure {
+  width: 45%;
+  float: left;
+}
+
+main article:not(#profile-picture) figure:first-of-type {
+  margin-right:10%;
+}
+
+main article:not(#profile-picture) figure img {
+  width: 100%;
+}
+
+main article:not(#profile-picture) figure svg {
+  width: 1em;
+  height: 1em;
+}
+
+main article:not(#profile-picture) figure figcaption {
+  display: inline;
+}
+
+#profile-picture {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0,0,0,0.75);
+}
+
+#profile-picture:target {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile-picture-inner {
+  width: 40em;
+  background: #01579B;
+  padding: 1em;
+  color: white;
+}
+
+.current-profile-picture {
+  max-width: 50%;
+  margin: auto;
+}
+
+.current-profile-picture img {
+  width: 100%;
+}
+
+#profile-picture h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+#profile-picture h3 {
+  text-align: left;
+  font-weight: 300;
+}
+
+#profile-picture [role='button'] {
+  padding: 1em;
+  display: inline-block;
+  background: white;
+  text-decoration: none;
+  color: #01579B;
+  margin-bottom: 1em;
+}
+
+.filter-effects figure {
+  width: 20%;
+  float: left;
+  padding:0.5em;
+}
+
+.filter-effects figure img {
+  width: 100%;
+}
+
+.filter-effects figure figcaption {
+  text-align: center;
+}
+
+[alt$='lighten'] {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.2" /><feFuncG type="linear" slope="1.2" /><feFuncB type="linear" slope="1.2" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: brightness(1.2);
+          filter: brightness(1.2);
+}
+
+[alt$='overlay'] {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncA type="table" tableValues="0 0.5" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: opacity(50%);
+          filter: opacity(50%);
+}
+
+[alt$='soft light'] {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncA type="table" tableValues="0 0.25" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: opacity(25%);
+          filter: opacity(25%);
+}
+
+[alt$='color'] {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="1.7870000000000001 -0.715 -0.072 0 0 -0.213 1.305 -0.072 0 0 -0.213 -0.715 1.9280000000000002 0 0 0 0 0 1 0" /></filter></svg>#filter');
+  -webkit-filter: saturate(2);
+          filter: saturate(2);
+}
+
+[alt$='difference'] {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+body > footer {
+  width: 100%;
+  background: #01579B;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+}
+
+body > footer nav {
+  width: 33%;
+}
+
+body > footer address {
+  text-align: center;
+  width: 33%;
+  color: white;
+}
+
+body > footer > ul {
+  width: 33%;
+}
+
+body > footer ul li {
+  text-align: center;
+}
+
+body > footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 852px) {
+  main article:not(#profile-picture) {
+    border-right: 2em solid #01579B;
+    border-top: 0;
+  }
+}
+
+@media (min-width: 656px) {
+  body > header {
+    width: 20em;
+  }
+}

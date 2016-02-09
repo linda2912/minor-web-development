@@ -13,6 +13,7 @@
         "<h2>CSS to the rescue</h2>" +
         "<ul>" +
           "<li><a href='" + baseURL + "/cssToTheRescue/exercise1/index.html'>Flexbox Baby</a></li>" +
+          "<li><a href='" + baseURL + "/cssToTheRescue/exercise2/index.html'>Making a modal</a></li>" +
         "</ul>" +
         "<h2>Webapp from Scratch</h2>" +
         "<ul>" +
