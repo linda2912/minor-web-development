@@ -22,6 +22,7 @@
       router.create('home', function(){console.log(this);});
       router.create('bestpractices', function(){console.log(this)});
       router.create('bestpractices/{user}', function(){console.log(this)});
+      router.create('bestpractices/{user}/edit', function(){console.log(this)});
     }
   };
 
@@ -71,7 +72,7 @@
 
     if(newRouteNameParts.length !== self.routeNameParts.length) return false;
 
-    for(var x = 0; x < newRouteNameParts.length; x ++) {
+    for(var x = 0; x < newRouteNameParts.length; x++) {
       var part = self.routeNameParts[x];
       if(typeof part === undefined) return false; 
       if(part.substring(0, 1) !== '{' && part.substring(part.length -1) !== '}') {
