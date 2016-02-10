@@ -21,7 +21,7 @@
     createRoutes: function() {
       router.create('home', function(){console.log(this);});
       router.create('bestpractices', function(){console.log(this)});
-      router.create('bestpractices/{henk}', function(){console.log(this)});
+      router.create('bestpractices/{user}', function(){console.log(this)});
     }
   };
 
@@ -67,20 +67,19 @@
 
   Route.prototype.test = function(newRouteName) {
     var self = this;
-    var testSucces = true;
     var newRouteNameParts = newRouteName.split('/');
-    if(newRouteNameParts.length !== self.routeNameParts.length) testSucces = false;
-    else {
-      for(var x = 0; x < newRouteNameParts.length && testSucces; x ++) {
-        var part = self.routeNameParts[x];
-        if(typeof part === undefined) testSucces = false; 
-        if(part.substring(0, 1) !== '{' && part.substring(part.length -1) !== '}') {
-          if(part !== newRouteNameParts[x]) testSucces = false;
-        } else self.parameters[part.replace('{', '').replace('}', '')] = newRouteNameParts[x];
-      };
-    }
 
-    return testSucces;
+    if(newRouteNameParts.length !== self.routeNameParts.length) return false;
+
+    for(var x = 0; x < newRouteNameParts.length; x ++) {
+      var part = self.routeNameParts[x];
+      if(typeof part === undefined) return false; 
+      if(part.substring(0, 1) !== '{' && part.substring(part.length -1) !== '}') {
+        if(part !== newRouteNameParts[x]) return false;
+      } else self.parameters[part.replace('{', '').replace('}', '')] = newRouteNameParts[x];
+    };
+
+    return true;
   }
 
   kzStart.init();
