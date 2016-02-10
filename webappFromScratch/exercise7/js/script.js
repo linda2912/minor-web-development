@@ -2,68 +2,86 @@
   'use strict';
 
   var contentContainer;
+  var routes = [];
 
   var kzStart = {
     init: function() {
       this.cacheVars();
-      router.init();
+      this.addEvents();
+      this.createRoutes();
     },
     cacheVars: function() {
       contentContainer = document.getElementById('contentContainer');
-    }
-  };
-
-  var router = {
-    init: function() {
-      var self = this;
-      utils.setHash('home');
-
-      utils.addEvent(window, 'hashchange', function(evt){
-        self.changeRoute({oldHash: evt.oldURL.split('#')[1], newHash: evt.newURL.split('#')[1]});
+    },
+    addEvents: function() {
+      utils.addEvent(window, 'hashchange', function(evt) {
+        router.goTo(evt.newURL.split('#')[1]);
       });
     },
-    changeRoute: function(routes) {
-      var template = this.getTemplateObj(routes.newHash);
-      //contentContainer.innerHTML = templates[routes.newHash];
-    },
-    getTemplateObj: function(templateName) {
-      var templateObj = _.get(templates, templateName.replace('/', '.'), undefined);
-      if(templateObj) return templateObj;
-      else if(new RegExp(/weather\/[a-z]+/g).test(templateName)) {
-        var templateNameArray = templateName.split('/');
-        templateNameArray.shift();
-        
-      }
+    createRoutes: function() {
+      router.create('home', function(){console.log(this);});
+      router.create('bestpractices', function(){console.log(this)});
+      router.create('bestpractices/{henk}', function(){console.log(this)});
     }
-  };
-
-  var view = {
-
   };
 
   //The Facade Pattern - a pattern that hides the real complexity.
   var utils = {
     //addEventListener with cross-browser compatibility
     addEvent: function(el, ev, fn) {
-      if( el.addEventListener ) {
-        el.addEventListener( ev, fn, false);
-      } else if(el.attachEvent) {
-        el.attachEvent( "on" + ev, fn);
-      } else {
-        el["on" + ev] = fn;
-      }
-    },
-    //check if the template exists
-    templateCheck: function(templateName) {
-      if(templates[templateName]) return true;
-      else return false;
-    },
-    //force an route change
-    setHash: function(hash) {
-      window.location.hash = '#' + hash;
-      router.changeRoute({oldHash: undefined, newHash: hash});
+      if( el.addEventListener ) el.addEventListener( ev, fn, false);
+      else if(el.attachEvent) el.attachEvent( "on" + ev, fn);
+      else el["on" + ev] = fn;
     }
   };
+
+  var router = {
+    create: function(routeName, fn) {
+      routes.push(new Route(routeName, fn));
+    },
+    goTo: function(newRouteName) {
+      var correctRoute;
+
+      routes.forEach(function(route) {
+        if(route.test.call(route, newRouteName)) correctRoute = route;
+      });
+
+      if(correctRoute) correctRoute.callback.apply(correctRoute);
+      else console.error('bad hash: ' + newRouteName);
+    }
+  };
+
+  var Route = function(routeName, callback) {
+    var self = this;
+    self.callback = callback;
+    self.routeNameParts = routeName.split('/');
+    self.dynamicRoutes = [];
+    self.parameters = {};
+
+    self.routeNameParts.forEach(function(part) {
+      if(part.substring(0, 1) === '{' && part.substring(part.length -1) === '}') {
+        self.dynamicRoutes.push(part.replace('{', '').replace('}', ''));
+      }
+    });
+  };
+
+  Route.prototype.test = function(newRouteName) {
+    var self = this;
+    var testSucces = true;
+    var newRouteNameParts = newRouteName.split('/');
+    if(newRouteNameParts.length !== self.routeNameParts.length) testSucces = false;
+    else {
+      for(var x = 0; x < newRouteNameParts.length && testSucces; x ++) {
+        var part = self.routeNameParts[x];
+        if(typeof part === undefined) testSucces = false; 
+        if(part.substring(0, 1) !== '{' && part.substring(part.length -1) !== '}') {
+          if(part !== newRouteNameParts[x]) testSucces = false;
+        } else self.parameters[part.replace('{', '').replace('}', '')] = newRouteNameParts[x];
+      };
+    }
+
+    return testSucces;
+  }
 
   kzStart.init();
 }())
