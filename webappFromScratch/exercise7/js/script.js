@@ -1,8 +1,6 @@
 (function() {
   'use strict';
-
   var contentContainer;
-  var routes = [];
 
   var kzStart = {
     init: function() {
@@ -15,14 +13,13 @@
     },
     addEvents: function() {
       utils.addEvent(window, 'hashchange', function(evt) {
-        router.goTo(evt.newURL.split('#')[1]);
+        router.go(evt.newURL.split('#')[1]);
       });
     },
     createRoutes: function() {
       router.create('home', function(){console.log(this);});
       router.create('bestpractices', function(){console.log(this)});
       router.create('bestpractices/{user}', function(){console.log(this)});
-      router.create('bestpractices/{user}/edit', function(){console.log(this)});
     }
   };
 
@@ -30,58 +27,73 @@
   var utils = {
     //addEventListener with cross-browser compatibility
     addEvent: function(el, ev, fn) {
-      if( el.addEventListener ) el.addEventListener( ev, fn, false);
+      if(el.addEventListener ) el.addEventListener(ev, fn, false);
       else if(el.attachEvent) el.attachEvent( "on" + ev, fn);
       else el["on" + ev] = fn;
     }
   };
 
   var router = {
+    routes: [],
     create: function(routeName, fn) {
-      routes.push(new Route(routeName, fn));
+      this.routes.push(new Route(routeName, fn));
     },
-    goTo: function(newRouteName) {
-      var correctRoute;
+    go: function(incomingRoute) {
+      var self = this;
+      var routeFound = false;
 
-      routes.forEach(function(route) {
-        if(route.test.call(route, newRouteName)) correctRoute = route;
-      });
+      for(var x = 0; x < self.routes.length; x++) {
+        var route = self.routes[x];
+        if(self.match(route, incomingRoute)) {
+          route.callback.apply(route);
+          routeFound = true;
+          break;
+        }
+      };
 
-      if(correctRoute) correctRoute.callback.apply(correctRoute);
-      else console.error('bad hash: ' + newRouteName);
+      if(!routeFound) console.error('bad hash: ' + incomingRoute);
+    },
+    match: function(route, incomingRoute) {
+      var self = this;
+      var incomingRouteArray = incomingRoute.split('/');
+
+      if(!this.helper.isSameLength(route, incomingRouteArray)) return false;
+
+      for(var x = 0; x < incomingRouteArray.length; x++){
+        var routePart = route.routeParts[x];
+        var incomingRoutePart = incomingRouteArray[x];
+
+        if(typeof routePart === undefined) return false;
+
+        if(!self.helper.isDynamicPart(routePart)) {
+          if(!self.helper.isSame(routePart, incomingRoutePart)) return false;
+        } else route.parameters[self.helper.removeDynamicPart(routePart)] = incomingRoutePart;
+      };
+
+      return true;
+    },
+    helper: {
+      isDynamicPart: function(routeName) {
+        return ((routeName.substring(0, 1) === '{' && routeName.substring(routeName.length -1) === '}') ? true : false);
+      },
+      isSameLength: function(route, incomingRouteArray) {
+        return (route.routeParts.length === incomingRouteArray.length);
+      },
+      isSame: function(routePart, incomingRoutePart) {
+        return ((routePart === incomingRoutePart) ? true : false);
+      },
+      removeDynamicPart: function(routePart) {
+        return routePart.replace('{', '').replace('}', '');
+      }
     }
   };
 
   var Route = function(routeName, callback) {
     var self = this;
     self.callback = callback;
-    self.routeNameParts = routeName.split('/');
-    self.dynamicRoutes = [];
+    self.routeParts = routeName.split('/');
     self.parameters = {};
-
-    self.routeNameParts.forEach(function(part) {
-      if(part.substring(0, 1) === '{' && part.substring(part.length -1) === '}') {
-        self.dynamicRoutes.push(part.replace('{', '').replace('}', ''));
-      }
-    });
   };
-
-  Route.prototype.test = function(newRouteName) {
-    var self = this;
-    var newRouteNameParts = newRouteName.split('/');
-
-    if(newRouteNameParts.length !== self.routeNameParts.length) return false;
-
-    for(var x = 0; x < newRouteNameParts.length; x++) {
-      var part = self.routeNameParts[x];
-      if(typeof part === undefined) return false; 
-      if(part.substring(0, 1) !== '{' && part.substring(part.length -1) !== '}') {
-        if(part !== newRouteNameParts[x]) return false;
-      } else self.parameters[part.replace('{', '').replace('}', '')] = newRouteNameParts[x];
-    };
-
-    return true;
-  }
 
   kzStart.init();
 }())
