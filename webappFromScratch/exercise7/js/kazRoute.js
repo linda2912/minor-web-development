@@ -27,7 +27,7 @@ var kazRoute = (function(){
     var incomingRouteArray = incomingRoute.split('/');
 
     //if the route array and the incoming route array aren't the same length deny the match
-    if(!utils.isSameArrayLength(route, incomingRouteArray)) return false;
+    if(!kazUtils.isSameArrayLength(route.routeParts, incomingRouteArray)) return false;
 
     //Loop through incoming route array and every return must be true
     return _.every(incomingRouteArray, function(incomingRoutePart, i) {
@@ -36,33 +36,14 @@ var kazRoute = (function(){
 
       if(typeof routePart === undefined) return false;
 
-      if(!utils.isDynamicPart(routePart)) {
-        if(!utils.isSameObject(routePart, incomingRoutePart)) return false;
+      if(!kazUtils.containsChars(routePart, ['{', '}'])) {
+        if(!kazUtils.isSameObject(routePart, incomingRoutePart)) return false;
       } 
       //if it is an dynamic part, create an parameter with the key of the route part and the key incoming route part
-      else route.parameters[utils.removeDynamicPart(routePart)] = incomingRoutePart;
+      else route.parameters[kazUtils.removeFromString(routePart, ['{', '}'])] = incomingRoutePart;
 
       return true;
     });
-  }
-
-  utils = {
-    //the routepart is dynamic if there is an { } in it
-    isDynamicPart: function(routePart) {
-      return ((routePart.substring(0, 1) === '{' && routePart.substring(routePart.length -1) === '}') ? true : false);
-    },
-    //check if the arrays are the same length
-    isSameArrayLength: function(route, incomingRouteArray) {
-      return (route.routeParts.length === incomingRouteArray.length);
-    },
-    //check if the objects are the same
-    isSameObject: function(routePart, incomingRoutePart) {
-      return ((routePart === incomingRoutePart) ? true : false);
-    },
-    //remove the { } from an dynamicpart
-    removeDynamicPart: function(routePart) {
-      return routePart.replace('{', '').replace('}', '');
-    }
   }
 
   //An Object that creates an route with an name and a callback

@@ -6,32 +6,34 @@
     init: function() {
       this.cacheVars();
       this.addEvents();
-      this.createRoutes();
+      this.initRoutes();
     },
     cacheVars: function() {
       contentContainer = document.getElementById('contentContainer');
     },
     addEvents: function() {
-      utils.addEvent(window, 'hashchange', function(evt) {
+      kazUtils.addEvent(window, 'hashchange', function(evt) {
         kazRoute.go(evt.newURL.split('#')[1]);
       });
     },
-    createRoutes: function() {
-      kazRoute.create('home', function(){console.log(this);});
-      kazRoute.create('bestpractices', function(){console.log(this)});
-      kazRoute.create('bestpractices/{user}', function(){console.log(this)});
+    initRoutes: function() {
+      kazRoute.create('home', controllers['home']);
+      kazRoute.create('bestpractices', controllers['bestpractices']);
+      kazRoute.create('bestpractices/{user}', controllers['bestpractices/{user}']);
     }
   };
 
-  //The Facade Pattern - a pattern that hides the real complexity.
-  var utils = {
-    //addEventListener with cross-browser compatibility
-    addEvent: function(el, ev, fn) {
-      if(el.addEventListener ) el.addEventListener(ev, fn, false);
-      else if(el.attachEvent) el.attachEvent( "on" + ev, fn);
-      else el["on" + ev] = fn;
+  var controllers = {
+    home: function() {
+      console.log(this);
+    },
+    bestpractices: function() {
+      console.log(this);
+    },
+    'bestpractices/{user}': function() {
+      console.log(this);
     }
-  };
+  }
 
   kzStart.init();
 }())
