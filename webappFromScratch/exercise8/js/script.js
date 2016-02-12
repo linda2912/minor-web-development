@@ -47,7 +47,8 @@
     'bestpractices/{user}': function() {
       var data = {
         name: 'Henk Jan',
-        age: 29
+        age: 29,
+        skills: ['Coding']
       }
 
       kazAjax.call('get', '../templates/home.html', true, {
