@@ -23,6 +23,7 @@
           "<li><a href='" + baseURL + "/webappFromScratch/exercise5/index.html'>Start the webapp, begin with routing</a></li>" +
           "<li><a href='" + baseURL + "/webappFromScratch/exercise7/index.html'>Creating my own routing</a></li>" +
           "<li><a href='" + baseURL + "/webappFromScratch/exercise8/index.html'>Creating my own templating</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise85/index.html'>The road to the future aka ES6</a></li>" +
         "</ul>" +
         "<h2>Weekly Nerds</h2>" +
         "<ul>" +
