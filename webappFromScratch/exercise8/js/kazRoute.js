@@ -15,8 +15,9 @@ var kazRoute = (function(){
       return match(route, incomingRoute);
     });
 
+    //TODO: make an 404 error template thingy
     if(!route) return console.error('bad hash: ' + incomingRoute);
-    
+
     //fire the callback function of the matched route
     route.callback.apply(route);
   }
@@ -40,7 +41,7 @@ var kazRoute = (function(){
         if(!kazUtils.isSameObject(routePart, incomingRoutePart)) return false;
       } 
       //if it is an dynamic part, create an parameter with the key of the route part and the key incoming route part
-      else route.parameters[kazUtils.removeFromString(routePart, ['{', '}'])] = incomingRoutePart;
+      else route.parameters[kazUtils.replaceFromString(routePart, ['{', '}'], '')] = incomingRoutePart;
 
       return true;
     });

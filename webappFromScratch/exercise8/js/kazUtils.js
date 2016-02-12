@@ -14,17 +14,23 @@ var kazUtils = {
     return ((objectA === objectB) ? true : false);
   },
   //check if string has chars
-  containsChars: function(string, charsArray) {
+  containsChars: function(str, charsArray) {
     var foundArray = [];
     charsArray.forEach(function(char) {
-      (string.indexOf(char) > -1) ? foundArray.push(true) : '';
+      (str.indexOf(char) > -1) ? foundArray.push(true) : '';
     });
     return this.isSameArrayLength(charsArray, foundArray);
   },
-  removeFromString: function(string, charsArray) {
+  replaceFromString: function(str, charsArray , replaceTo) {
     charsArray.forEach(function(char) {
-      string = string.replace(char, '');
+      str = str.replace(char, replaceTo);
     });
-    return string;
+    return str;
+  },
+  subStr: function(str, startIndex, endIndex) {
+    return (endIndex) ? str.substr(startIndex, endIndex) : str.substr(startIndex);
+  },
+  findRegexMatches: function(str, regex) {
+    return str.match(regex);
   }
 };
