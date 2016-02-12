@@ -21,11 +21,14 @@ var kazUtils = {
     });
     return this.isSameArrayLength(charsArray, foundArray);
   },
-  replaceFromString: function(str, charsArray , replaceTo) {
+  replaceFromString: function(str, charsArray, replaceTo) {
     charsArray.forEach(function(char) {
       str = str.replace(char, replaceTo);
     });
     return str;
+  },
+  slice: function(str, startIndex, endIndex) {
+    return str.slice(startIndex, endIndex);
   },
   subStr: function(str, startIndex, endIndex) {
     return (endIndex) ? str.substr(startIndex, endIndex) : str.substr(startIndex);
