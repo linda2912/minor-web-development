@@ -1,6 +1,6 @@
 (function(){
   var body = document.querySelector('body');
-  var baseURL = 'http://kasszz.github.io/minor-web-development';
+  var baseURL = 'http://casperboutens.nl/minor-web-development';
   var isMenu = false;
   var keysPressed = {};
   var templateString =

@@ -118,8 +118,8 @@ body > header {
   text-align: center;
 }
 
-body > header h1 span {
-  font-family: Yolo, serif;
+body > header h1 {
+  font-family: Yolo, 'Roboto', serif;
   width: 100%;
   display: block;
 }
@@ -186,7 +186,7 @@ body > main {
 
 main article:not(#profile-picture) {
   margin-bottom: 1em;
-  max-width: 43em;
+  width: 100%;
   background: white;
   padding: 1em;
   border-top: 2em solid #01579B;
@@ -194,11 +194,6 @@ main article:not(#profile-picture) {
 
 main article:not(#profile-picture) header {
   margin-bottom: 1em;
-}
-
-main article:not(#profile-picture) header h1 {
-  font-size: 1.5em;
-  font-weight: 300;
 }
 
 main article:not(#profile-picture) header h1 {
@@ -337,6 +332,15 @@ main article:not(#profile-picture) figure figcaption {
           filter: invert(100%);
 }
 
+form span {
+  display: block;
+}
+
+form input {
+  width: 100%;
+  margin: 0.5em 0;
+}
+
 body > footer {
   width: 100%;
   background: #01579B;
@@ -350,18 +354,19 @@ body > footer {
           align-content: stretch;
 }
 
-body > footer nav {
-  width: 33%;
-}
-
 body > footer address {
-  text-align: center;
-  width: 33%;
   color: white;
 }
 
-body > footer > ul {
-  width: 33%;
+body > footer address pre {
+   white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;
+ width: 50%;
+ margin: 0 auto;
+ text-align: center;
 }
 
 body > footer ul li {
@@ -373,15 +378,19 @@ body > footer ul li a {
   color: white;
 }
 
-@media (min-width: 852px) {
+@media (min-width: 53.25em) {
   main article:not(#profile-picture) {
     border-right: 2em solid #01579B;
     border-top: 0;
   }
 }
 
-@media (min-width: 656px) {
+@media (min-width: 41em) {
   body > header {
     width: 20em;
+  }
+
+  main article:not(#profile-picture) {
+    width: 80%;
   }
 }
