@@ -3,19 +3,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+* { // it's easier to use * if you want to select everything
   margin: 0;
   padding: 0;
   border: 0;
@@ -59,12 +47,10 @@ body {
   box-sizing: border-box;
 }
 
-main {
+main { // you used unnecessary code
   position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
+  width: 100vw; 
+  height: 100vh;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
   -ms-transition: opacity 0.5s ease-in-out;
@@ -86,8 +72,8 @@ main img.background {
   right: 0; 
   bottom: 0; 
   margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
+  min-width: 100%;
+  min-height: 100%;
   -webkit-filter: blur(8px);
   -moz-filter: blur(8px);
   -o-filter: blur(8px);
@@ -135,7 +121,7 @@ main div:last-of-type input {
   font-size: 0.5em;
   font-family: 'Roboto';
   width: 75%;
-  float:left;
+  float: left;
   padding: 0.5em;
   outline: 0;
   border: 0;
@@ -151,7 +137,7 @@ main div:last-of-type button {
   font-size: 0.5em;
   font-family: 'Roboto';
   width: 12.5%;
-  float:left;
+  float: left;
   padding: 0.5em 0;
   outline: 0;
   border: 0;
