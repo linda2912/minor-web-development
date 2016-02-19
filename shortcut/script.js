@@ -23,7 +23,12 @@
           "<li><a href='" + baseURL + "/webappFromScratch/exercise5/index.html'>Start the webapp, begin with routing</a></li>" +
           "<li><a href='" + baseURL + "/webappFromScratch/exercise7/index.html'>Creating my own routing</a></li>" +
           "<li><a href='" + baseURL + "/webappFromScratch/exercise8/index.html'>Creating my own templating</a></li>" +
-          "<li><a href='" + baseURL + "/webappFromScratch/exercise85/index.html'>The road to the future aka ES6</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise85/index.html'>The start to the future aka ES6 and functinal programming (part 1)</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise9/index.html'>Getting data from an API and the template</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise10/index.html'>Handle a responsive event aka gestures</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise11/index.html'>Interface transactions</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise12/index.html'>Spinner (of death)</a></li>" +
+          "<li><a href='" + baseURL + "/webappFromScratch/exercise12/index.html'>The start to the future aka ES6 and functinal programming (part 2)</a></li>" +
         "</ul>" +
         "<h2>Weekly Nerds</h2>" +
         "<ul>" +

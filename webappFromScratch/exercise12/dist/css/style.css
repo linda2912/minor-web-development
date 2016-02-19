@@ -1,0 +1,198 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Roboto', sarif;
+  font-weight: 300;
+  box-sizing: border-box;
+}
+
+main {
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+}
+
+main.fadeout {
+  opacity: 0;
+}
+
+main.fadein {
+  opacity: 1;
+}
+
+main img.background {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  -webkit-filter: contrast(50%);
+  -moz-filter: contrast(50%);
+  -o-filter: contrast(50%);
+  -ms-filter: contrast(50%);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+main div.back {
+  position: absolute;
+  top: 27%;
+  left: 26%;
+}
+
+main div.back a {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main div:last-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5em;
+  overflow: hidden;
+}
+
+main div:last-of-type h1 {
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+main div:last-of-type input {
+  margin-top: 1em;
+  font-size: 0.5em;
+  font-family: 'Roboto';
+  width: 75%;
+  float:left;
+  padding: 0.5em;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+main div:last-of-type input:focus {
+  background: #F3E5F5;
+}
+
+main div:last-of-type button {
+  margin-top: 1em;
+  font-size: 0.5em;
+  font-family: 'Roboto';
+  width: 25%;
+  float:left;
+  padding: 0.5em 0;
+  outline: 0;
+  border: 0;
+  color: white;
+  background: #AB47BC;
+  text-transform: uppercase;
+  box-sizing: border-box;
+}
+
+main div:last-of-type button:hover {
+  background: #6A1B9A;
+  cursor: pointer;
+}
+
+body > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+body > div.active {
+  opacity: 1;
+  display: block;
+}
+
+body > div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}

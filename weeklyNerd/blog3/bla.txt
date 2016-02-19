@@ -1,0 +1,88 @@
+LookLive is een bedrijf wat kleding zoekt die lijkt op dingen die acteurs aanhebben. Dit willen ze automatisch maken.
+
+Hij gaat het hebben over git workflow.
+
+Waarom git:
+
+code delen is makkelijk.
+Je kan met meer mensen aan één project werken.
+Bare repo -> bevat alle geschiedenis.
+Working copy/deretory -> Bare repo + workflow.
+Iedereen kan een bare repo generen, hierdoor kan het project moeilijk verloren gaan (server crash)
+Je kan geschiedenis kiezen. Hierdoor kan je oudere files pakken.
+Git is slim, het weet elke commits na elkaar moeten komen, als er een conflict komt, dan moet je mergen (handmatig kijken wat waar hoort).
+
+Taken automatiseren:
+
+Gulp / Grunt:
+File watchers
+Voeren taken uit
+Voorkomt handmatige herhalingen
+Helpen CL
+Gebruiken plugins om taken uit te voeren
+
+Looklive heeft gekozen voor Gulp:
+Makkelijkere syntax
+Sneller (op het moment van kiezen)
+
+Een gulp pipeline => 
+
+van .scss naar optimised.css
+ .scss
+ =>
+ .scss -> css
+ =>
+ autoprefix css
+ =>
+ minify.css
+ =>
+ reload page
+
+van .js files naar 1 optimised .js file
+ .js
+ =>
+ jshint
+ =>
+ concat.js
+ =>
+ uglify.js
+ =>
+ reload page
+
+van .svg naar iconfont
+ iconfont
+ =>
+ grab all .svg
+ =>
+ generate font
+ =>
+ reload page
+
+Cachebusting
+ cache
+ =>
+ grab all css/js
+ =>
+ generate hash
+ =>
+ reload page
+
+html reloader
+ html
+ =>
+ reload page
+
+
+Continuous integration => constant, automatisch uitrollen
+Looklike gebruikt Jenkins
+Het luistert naar git, elke keer als er een verandering is voert Jenkins taken uit
+
+Ze hebben 3 hoofd git repo's
+
+master -> stagging -> production
+
+Jenkins maakt een clone van git, dan installeerd die alle dependensies.
+Jenkins upload dan het naar stagging.
+Jenkins test dan de website.
+
+Als alles goed is wordt het naar productie te pushed.

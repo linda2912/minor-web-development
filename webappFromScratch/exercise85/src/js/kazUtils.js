@@ -22,22 +22,26 @@ export function containsChars(str, charsArray) {
   });
   return this.isSameArrayLength(charsArray, foundArray);
 }
-
+//replaces a string with charsArray to replaceTo
 export function replaceFromString(str, charsArray, replaceTo) {
   charsArray.forEach(function(char) {
     str = str.replace(char, replaceTo);
   });
   return str;
 }
-
+//slices a string
 export function slice(str, startIndex, endIndex) {
   return str.slice(startIndex, endIndex);
 }
-
+//subStr a string
 export function subStr(str, startIndex, endIndex) {
   return (endIndex) ? str.substr(startIndex, endIndex) : str.substr(startIndex);
 }
-
+//finds if regex matches str
 export function findRegexMatches(str, regex) {
   return str.match(regex);
+}
+//get an element from the document
+export function getDocumentElement(selector) {
+  return document.querySelector(selector);
 }
